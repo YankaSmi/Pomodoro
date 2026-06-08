@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightPink" Offset="0"/>
+            <GradientStop Color="LightBlue" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -26,6 +32,7 @@
                    FontFamily="Corbel"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
+                   Foreground="white"
                    Grid.Row="0"
                    Margin="20"
                    Grid.ColumnSpan="3"
@@ -37,7 +44,7 @@
                 Grid.Row="2"
                 FontSize="20px"
                 FontFamily="Corbel"
-                Background="LightPink"
+                Background="LightBlue"
                 Click="StartBtn_Click"/>
         
         <Button x:Name="PauseBtn"
@@ -48,7 +55,7 @@
          FontFamily="Corbel"
                 IsEnabled="false"
                 Click="PauseBtn_Click"
-         Background="LightBlue"/>
+         Background="White"/>
         
         <Button x:Name="ResetBtn"
             Content="СБРОСИТЬ"
@@ -65,13 +72,15 @@
                    Grid.Column="1"
                    Grid.Row="1"
                    Margin="20"
+                   Foreground="white"
                    FontSize="25"
                    Grid.ColumnSpan="2"
                />
         <WrapPanel Grid.Row="3"
            Grid.Column="1"
            Grid.ColumnSpan="3"
-           Margin="10">
+           Margin="10"
+          Background="White">
            
 
             <RadioButton x:Name="work20min"
@@ -105,6 +114,12 @@
                  Content="60 минут"
                  Checked="WorkTimeCheck"
                  Margin="10,5" />
+            <RadioButton  x:Name="work25sec"
+                 GroupName="WorkTime"
+                 Content="25 сек"
+                 Checked="WorkTimeCheck"
+                 Margin="10,5"
+                />
         </WrapPanel>
 
     </Grid>
